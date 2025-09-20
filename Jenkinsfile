@@ -14,20 +14,6 @@ pipeline {
             }
         }
 
-        stage('Build Docker Image') {
-            steps {
-                sh 'docker build -t ${DOCKER_IMAGE} .'
-            }
-        }
-
-        stage('Run Container') {
-            steps {
-                sh '''
-                docker rm -f testapp_container || true
-                docker run -d -p 8081:8081 --name testapp_container ${DOCKER_IMAGE}
-                '''
-            }
-        }
     }
 
     post {
