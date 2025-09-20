@@ -28,10 +28,6 @@ class UserControllerTest {
 
     @Mock
     private UserRepository repo;
-
-    @Mock
-    private MailService mailService;
-
     @InjectMocks
     private UserController userController;
 
